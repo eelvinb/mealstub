@@ -1,74 +1,185 @@
 <html>
 
-<body style="margin:0;padding:40px;background:#ffffff;font-family:Arial,sans-serif;">
+<head>
+<style>
 
-<table style="border-collapse:collapse;text-align:center;font-family:Arial,sans-serif;">
+body {
+  margin: 0;
+  padding: 40px;
+  background: #ffffff;
+  font-family: Arial, sans-serif;
+  color: #000;
+}
+
+.report-wrapper {
+  max-width: 1200px;
+  margin: auto;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+th {
+  background: #f4c7a1;
+  border: 2px solid #000;
+  padding: 14px 24px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+td {
+  border: 2px solid #000;
+  padding: 14px 24px;
+  font-size: 18px;
+}
+
+.organic {
+  background: #92d050;
+  font-weight: bold;
+}
+
+.inorganic {
+  background: #ffe699;
+  font-weight: bold;
+}
+
+.date-cell {
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.edit-btn {
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.name-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.name-card {
+  border: 2px solid #000;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.name-title {
+  background: #f4c7a1;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 2px solid #000;
+}
+
+.names {
+  padding: 14px;
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-line;
+  text-align: left;
+  min-height: 160px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="report-wrapper">
+
+<table>
 
   <tr>
-    <th style="background:#f4c7a1;border:2px solid #000;padding:12px 28px;font-size:18px;font-weight:bold;">Date</th>
-    <th style="background:#f4c7a1;border:2px solid #000;padding:12px 28px;font-size:18px;font-weight:bold;">Classification</th>
-    <th style="background:#f4c7a1;border:2px solid #000;padding:12px 28px;font-size:18px;font-weight:bold;">Breakfast</th>
-    <th style="background:#f4c7a1;border:2px solid #000;padding:12px 28px;font-size:18px;font-weight:bold;">Lunch</th>
-    <th style="background:#f4c7a1;border:2px solid #000;padding:12px 28px;font-size:18px;font-weight:bold;">Dinner</th>
+    <th>Date</th>
+    <th>Classification</th>
+    <th>Breakfast</th>
+    <th>Lunch</th>
+    <th>Dinner</th>
   </tr>
 
   <tr>
-    <td rowspan="2" style="border:2px solid #000;padding:12px 28px;font-size:18px;font-weight:bold;vertical-align:middle;">
-      May 18
+
+    <td rowspan="2" class="date-cell">
+      May
+      18
     </td>
 
-    <td style="background:#92d050;border:2px solid #000;padding:12px 42px;font-size:18px;font-weight:bold;">Organic</td>
+    <td class="organic">
+      Organic
+    </td>
 
-    <td style="border:2px solid #000;padding:12px 36px;font-size:18px;">
+    <td>
       3
     </td>
 
-    <td style="border:2px solid #000;padding:12px 36px;font-size:18px;">
+    <td>
       16
     </td>
 
-    <td style="border:2px solid #000;padding:12px 36px;font-size:18px;">
+    <td>
       7
     </td>
+
   </tr>
 
   <tr>
-    <td style="background:#ffe699;border:2px solid #000;padding:12px 42px;font-size:18px;font-weight:bold;">Inorganic</td>
 
-    <td style="border:2px solid #000;padding:12px 36px;font-size:18px;">
+    <td class="inorganic">
+      Inorganic
+    </td>
+
+    <td>
       2
     </td>
 
-    <td style="border:2px solid #000;padding:12px 36px;font-size:18px;">
+    <td>
       0
     </td>
 
-    <td style="border:2px solid #000;padding:12px 36px;font-size:18px;">
+    <td>
       0
     </td>
+
   </tr>
 
 </table>
 
-<br>
-
-<button onclick="toggleEdit()" style="padding:10px 18px;font-size:16px;font-weight:bold;cursor:pointer;">
+<button onclick="toggleEdit()" class="edit-btn">
   Edit Table
 </button>
 
-<script>
-function toggleEdit() {
-  const cells = document.querySelectorAll("td");
-  const button = document.querySelector("button");
+<div class="name-section">
 
-  cells.forEach(cell => {
-    cell.contentEditable = cell.contentEditable === "true" ? "false" : "true";
-  });
+  <div class="name-card">
+    <div class="name-title">
+      Breakfast - Organic
+    </div>
 
-  button.innerText = button.innerText === "Edit Table" ? "Save View" : "Edit Table";
-}
-</script>  
-Lauron, Jose Loulainetto
+    <div class="names">
+      Pepito, Gian Carlo
+Lumanog, Henry Jr.
+Sedano, Wilvert
+    </div>
+  </div>
+
+  <div class="name-card">
+    <div class="name-title">
+      Lunch - Organic
+    </div>
+
+    <div class="names">
+      Lauron, Jose Loulainetto
 Potot, Qualaine
 Dumayhag, Julius
 Abaño, Epifanio Jr.
@@ -84,19 +195,85 @@ Manlawe, Jerson
 Mabini, Manie
 Panilag, Rene
 Vestil, Nelson
-Purisima, Joesito
+    </div>
+  </div>
+
+  <div class="name-card">
+    <div class="name-title">
+      Dinner - Organic
+    </div>
+
+    <div class="names">
+      Purisima, Joesito
 Basubas, Elvin
 Sedano, Wilvert
 Gabaca, Harold
 Burgonia, Longie
 Sanchez, Edward
 Labajo, Marlone
-Pepito, Gian Carlo
-Lumanog, Henry Jr.
-Sedano, Wilvert
+    </div>
+  </div>
 
+  <div class="name-card">
+    <div class="name-title">
+      Breakfast - Inorganic
+    </div>
 
-Quilag, Rhodne
+    <div class="names">
+      Quilag, Rhodne
 Tenchaves, Dave
+    </div>
+  </div>
+
+  <div class="name-card">
+    <div class="name-title">
+      Lunch - Inorganic
+    </div>
+
+    <div class="names">
+      
+    </div>
+  </div>
+
+  <div class="name-card">
+    <div class="name-title">
+      Dinner - Inorganic
+    </div>
+
+    <div class="names">
+      
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+<script>
+
+function toggleEdit() {
+
+  const cells = document.querySelectorAll("td");
+  const nameBoxes = document.querySelectorAll(".names");
+  const button = document.querySelector(".edit-btn");
+
+  cells.forEach(cell => {
+    cell.contentEditable =
+      cell.contentEditable === "true" ? "false" : "true";
+  });
+
+  nameBoxes.forEach(box => {
+    box.contentEditable =
+      box.contentEditable === "true" ? "false" : "true";
+  });
+
+  button.innerText =
+    button.innerText === "Edit Table"
+      ? "Save View"
+      : "Edit Table";
+}
+
+</script>
+
 </body>
 </html>
